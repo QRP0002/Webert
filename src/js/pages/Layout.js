@@ -7,12 +7,15 @@ export default class Layout extends React.Component {
 		this.props.history.push(null, "/");
 	}
 
+
+
 	render() {
+		const { history } = this.props;
 		return (
 			<div>
 			<h1>KillerNews.net</h1>
 			{this.props.children}
-			<Link to="archives"> <button class="btn btn-success" onClick={this.navigate.bind(this)}> Archives </button></Link>
+			<Link to="archives" activeClassName="archivesActive"> <button class="btn btn-success" onClick={this.navigate.bind(this)}> Archives </button></Link>
 			<Link to="settings"> <button class="btn btn-success" onClick={this.navigate.bind(this)}> Settings </button></Link>
 			<Link to="featured"> <button class="btn btn-success" onClick={this.navigate.bind(this)}> Featured </button></Link>
 			</div>
