@@ -20,6 +20,7 @@ export default class Nav extends React.Component {
     const featuredClass = location.pathname === "/" ? "active" : "";
     const archivesClass = location.pathname.match(/^\/archives/) ? "active" : "";
     const settingsClass = location.pathname.match(/^\/settings/) ? "active" : "";
+    const todoClass =location.pathname.match(/^\/todo/) ? "active" : "";
     const navClass = collapsed ? "collapse" : "";
 
     return (
@@ -28,6 +29,7 @@ export default class Nav extends React.Component {
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" onClick={this.toggleCollapse.bind(this)} >
               <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -43,6 +45,9 @@ export default class Nav extends React.Component {
               </li>
               <li class={settingsClass}>
                 <Link to="settings" onClick={this.toggleCollapse.bind(this)}>Settings</Link>
+              </li>
+              <li class={todoClass}>
+                <Link to="todo" onClick={this.toggleCollapse.bind(this)}>Todo</Link>
               </li>
             </ul>
           </div>
