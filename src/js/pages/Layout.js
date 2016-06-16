@@ -3,14 +3,26 @@ import { Link } from "react-router";
 
 import Footer from "../components/layout/Footer";
 import Nav from "../components/layout/Nav";
+import Ad from "../components/Ad";
 
 export default class Layout extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			title: "Ad One"
+		};
+	}
+
+	changeTitle(title) {
+		this.setState(title);
+	}
+
   render() {
     const { location } = this.props;
     const containerStyle = {
       marginTop: "60px"
     };
-    console.log("layout");
+
     return (
       <div>
 
@@ -22,7 +34,7 @@ export default class Layout extends React.Component {
             	<h1>KillerNews.net</h1>
             	<div class="col-lg-12">
         	  		<div class="well text-center">
-          				Ad spot goes here
+          				<Ad changeTitle={this.changeTitle.bind(this)} title={this.state.title}/>
         			</div>
       		   </div>
             	{this.props.children}

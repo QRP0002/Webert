@@ -1,6 +1,6 @@
 import React from "react";
 import Article from "../components/Article";
- 
+
 export default class Archives extends React.Component {
 	render() {
 		const { query } = this.props.location;
@@ -16,7 +16,7 @@ export default class Archives extends React.Component {
 		      "Partial Article",
 		      "American Article",
 		      "Mexican Article"
-		].map((title, i) => <Article key ={i} title={title}/>);
+		].map((title, i) => <Article key={i} title={title}/>);
 		return (
 			<div>
 				<h1>Archives</h1>
